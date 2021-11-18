@@ -6,8 +6,19 @@ app.get('/', (req, res) => {
   res.send('Ciao BROTHERONI!')
 })
 
-app.get('/', (req, res) => {
-  res.send('Ciao RUBINONI')
+app.get('/prodotto/:codiceprodotto', (req, res) => {
+
+    // andare a cercare il prodotto sul db
+    // generazione della pagina html
+    var paginaWebProdotto = "<html><body>";
+    paginaWebProdotto+="<div>"+req.params.codiceprodotto+"</div>";
+    paginaWebProdotto+="</body></html>"
+
+
+  res.send(paginaWebProdotto);  
+
+
+
 })
 
 app.listen(port, () => {
